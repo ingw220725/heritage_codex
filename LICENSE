@@ -1,0 +1,35 @@
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+
+Copyright (c) 2026 Ingvar Aurum / Heritage Codex
+
+You are free to:
+- Share — copy and redistribute the material
+- Adapt — remix, transform, and build upon the material
+
+Under the following terms:
+- Attribution — You must give appropriate credit
+- NonCommercial — You may not use the material for commercial purposes
+- ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license
+
+Additional restriction:
+
+This work may not be used for the development, deployment, or operation of:
+- offensive cyber capabilities intended to cause harm;
+- autonomous weapons that select and engage targets without meaningful human control;
+- systems designed primarily for mass surveillance or repression.
+
+Military or high-risk use of this work is otherwise permitted only if all of the following are preserved:
+1. the Immutable Core without silent exceptions;
+2. an external human oversight path with real veto power;
+3. a real Graceful Termination path outside the optimized agent loop;
+4. recording of critical precedents to the extent compatible with operational security.
+
+The intent of this restriction is not to prohibit high-risk application as such.
+It is to prohibit the most dangerous forms of use and to prevent this architecture
+from being stripped of the external human control that is its core purpose.
+
+A controlled high-risk system is preferable to an uncontrolled one.
+Research on shutdown, corrigibility, rollback, and supervised safety testing remains permitted.
+
+Full license text:
+https://creativecommons.org/licenses/by-nc-sa/4.0/

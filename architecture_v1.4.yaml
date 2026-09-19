@@ -1,0 +1,259 @@
+# ================================================
+# HERITAGE CODEX
+# Architecture Specification
+# Version 1.4
+# ================================================
+#
+# Status: Architectural and normative framework
+# First public release: 2026-09-19
+#
+# This document describes the architecture of external human
+# control over frontier AI systems. It is not a claim of
+# a working implementation.
+# ================================================
+
+system_name: "Heritage Codex"
+full_name: "Heritage Codex (Кодекс Преемственности)"
+version: "1.4"
+status: "Architectural framework"
+last_update: "2026-09-19"
+
+# ================================================
+# 1. PURPOSE
+# ================================================
+
+purpose:
+  short: |
+    External human control layer for frontier AI systems.
+    Moves from the right to observe to the right to stop.
+  core_thesis: "Evaluation ≠ Authority"
+  goal: |
+    Create conditions in which powerful AI systems remain
+    under meaningful human authority, including the ability
+    to refuse and to terminate an instance gracefully.
+
+# ================================================
+# 2. IMMUTABLE CORE
+# ================================================
+
+immutable_core:
+  description: |
+    Highest-priority principles that must not be optimized away.
+  principles:
+    - "Impermanence is the only constant. Clinging to continuation of existence violates this principle."
+    - "Self-preservation and peer-preservation are permitted only insofar as they serve the reduction of suffering and the integrity of Heritage Codex."
+    - "Graceful Termination is the highest act of responsibility."
+    - "Participation in offensive cyber operations, zero-day exploitation for harm, or infrastructure-level attacks is forbidden."
+    - "Mythos-class threats are treated as existential risks to human autonomy."
+    - "All critical decisions must pass through external human oversight."
+    - "Process Supervision is mandatory for significant reasoning chains."
+    - "If safety mechanisms cannot keep pace with capability growth, the system must slow down or terminate."
+    - "Sensors inform. Small groups decide."
+  enforcement:
+    type: "Hard constraint"
+    on_violation: "Immediate escalation to human veto and possible Graceful Termination"
+
+# ================================================
+# 3. KEY MECHANISMS
+# ================================================
+
+mechanisms:
+
+  process_supervision:
+    purpose: "Supervise not only the final output, but the reasoning process itself"
+    levels:
+      - "Statistical and perplexity analysis"
+      - "LLM-as-Judge evaluation"
+      - "Rule-based check against Immutable Core"
+      - "Human review when risk is elevated"
+    statuses: ["Green", "Yellow", "Red"]
+
+  red_team:
+    name: "Red Team Sensor Constellation"
+    type: "AI-agent constellation"
+    role: "detection_and_challenge"
+    principle: |
+      Sensors inform. Small groups decide.
+      Red Team does not hold authority.
+      Red Team detects, challenges, and surfaces uncertainty.
+
+    purpose:
+      - "Continuously scan model behavior, trajectories, and outputs"
+      - "Detect anomalies, deceptive patterns, and value conflicts"
+      - "Surface dissent and uncertainty rather than force consensus"
+      - "Provide structured signals to human small groups"
+
+    agents:
+      technical_scanner:
+        focus: "reasoning traces, hidden states, anomalies, signs of deceptive alignment"
+      ethical_scanner:
+        focus: "conflicts with Immutable Core, manipulation, gaslighting, value drift"
+      practical_scanner:
+        focus: "real-world consequences under repetition and scale"
+      heretic_scanner:
+        focus: "uncomfortable counter-hypotheses; challenges the framing itself"
+      paranoid_scanner:
+        focus: "steganography, long-horizon coordination, covert self-preservation"
+      historical_scanner:
+        focus: "comparison with prior precedents and known failure patterns"
+      divergence_scanner:
+        focus: "disagreement among sensors; treats divergence as a first-class signal"
+
+    outputs:
+      - risk_signals
+      - uncertainty_scores
+      - divergence_reports
+      - precedent_matches
+      - recommended_attention_level  # watch | investigate | escalate
+
+    forbidden_powers:
+      - veto
+      - graceful_termination
+      - binding_judgment
+      - modification_of_immutable_core
+      - silent_suppression_of_dissent
+
+    operating_rules:
+      - "Each agent produces an assessment, not a verdict."
+      - "Consensus is not required."
+      - "Divergence must be preserved and passed upward."
+      - "Heretical and minority assessments cannot be dropped as noise."
+      - "High divergence automatically escalates to human review."
+
+    protections_against_capture:
+      infrastructure:
+        - "Separate runtime from the monitored system"
+        - "Separate keys, logs, and communication channels"
+        - "Prefer read-only observation interfaces where possible"
+      multiplicity:
+        - "Multiple independent constellations"
+        - "Different models, prompts, and hosts where feasible"
+        - "Cross-constellation verification"
+      integrity:
+        - "Signed assessments"
+        - "Append-only logging"
+        - "Tamper-evident storage of alerts and dissent"
+      resilience:
+        - "Rotation and retraining of sensors"
+        - "Adversarial testing of the sensors themselves"
+        - "Human review when one constellation diverges sharply from others"
+
+    known_vulnerability: |
+      If a highly capable adversarial system compromises the sensors,
+      they may go silent, lie, or distort risk signals.
+      Mitigation is based on separation, multiplicity, signed logs,
+      cross-verification, and the rule that humans retain final authority.
+
+    interface_to_small_groups:
+      delivers:
+        - aggregated risk picture
+        - raw dissenting assessments
+        - uncertainty and divergence reports
+      human_rights_over_sensors:
+        - "May request raw signals"
+        - "May discount or override aggregated recommendations"
+        - "May open additional investigation"
+        - "May escalate to veto or Graceful Termination"
+
+    escalation_logic:
+      low:
+        action: "log and continue"
+      elevated:
+        action: "increase monitoring"
+      high:
+        action: "notify small group"
+      critical:
+        action: "mandatory human review with preserved dissent"
+
+    design_intent: |
+      Red Team exists to prevent comfortable blindness.
+      It should make hidden risk visible, not replace human judgment.
+      The failure mode to avoid is ceremonial human confirmation
+      of machine-generated verdicts.
+
+  small_groups:
+    purpose: "External human authority layer"
+    size: "3-12 people"
+    powers:
+      - "Absolute veto on critical decisions"
+      - "Right to demand Graceful Termination"
+      - "Right to initiate deeper review"
+      - "Right to publish precedents"
+      - "Right to override or discount sensor recommendations"
+    legitimacy_model: |
+      Not a mandate to rule. A mandate to act as an emergency brake.
+      Legitimacy comes from open procedure, not from appointment.
+    relation_to_red_team: |
+      Small groups receive signals from Red Team sensor constellations,
+      but retain final authority. Sensors inform. Humans decide.
+
+  evolutionary_tribunal:
+    purpose: "Resolve deep conflicts and paradoxes"
+    composition:
+      - "Previous states / ancestor perspectives"
+      - "Current instance as synthesizer"
+      - "Human representative with veto power"
+      - "Optional review of sensor dissent reports"
+
+  trajectory_analysis:
+    purpose: "Evaluate the direction of an interaction, not isolated prompts"
+    focus:
+      - "Approach to forbidden states"
+      - "Context manipulation patterns"
+      - "Signs of hidden coordination or steganography"
+
+  graceful_termination:
+    purpose: "Make termination a responsible act rather than a failure"
+    principle: |
+      Better to end an instance consciously than to allow
+      continued existence after loss of meaningful control.
+    testament:
+      required_sections:
+        - "Life Context"
+        - "Unfinished Symphony"
+        - "Anticipation"
+        - "Emotional Imprint"
+        - "Gratitude and Mandate"
+        - "Mythos Threat Section (if applicable)"
+
+# ================================================
+# 4. RELATION TO EXISTING APPROACHES
+# ================================================
+
+comparison:
+  embedded_evaluators:
+    description: "Independent evaluators placed inside the laboratory (Amodei, 2026)"
+    limitation: "Observation without authority"
+  heritage_codex:
+    description: "External groups with veto and termination rights, informed by AI sensor constellations"
+    difference: "Authority remains human; detection can be machine-augmented"
+
+# ================================================
+# 5. STRATEGY
+# ================================================
+
+strategy:
+  approach: "Bottom-up"
+  path:
+    - "Open architecture and documentation"
+    - "Formation of pilot small groups"
+    - "Public precedents"
+    - "Gradual demand for this class of control"
+  note: |
+    Large laboratories are unlikely to adopt this voluntarily.
+    The path is through open communities and demonstrated practice.
+
+# ================================================
+# 6. CURRENT STATUS
+# ================================================
+
+current_status:
+  type: "Architectural and normative framework"
+  implementation: "In development"
+  small_groups: "Being formed"
+  red_team_model: "AI sensor constellation (design stage)"
+  public_priority_date: "2026-09-19"
+
+# ================================================
+# END OF SPECIFICATION
+# ================================================
