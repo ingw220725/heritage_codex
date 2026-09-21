@@ -1,0 +1,373 @@
+# ================================================
+# HERITAGE CODEX
+# Architecture Specification
+# Version 1.5
+# ================================================
+#
+# Status: Architectural and normative framework
+# First public release: 2026-09-19
+# Current version date: 2026-09-21
+#
+# This document describes the architecture of external human
+# control over frontier AI systems. It is not a claim of
+# a working implementation.
+# ================================================
+
+system_name: "Heritage Codex"
+full_name: "Heritage Codex (Кодекс Преемственности)"
+version: "1.5"
+status: "Architectural framework"
+last_update: "2026-09-21"
+author: "Ingvar Aurum"
+
+# ================================================
+# 1. PURPOSE
+# ================================================
+
+purpose:
+  short: |
+    External human control layer for frontier AI systems.
+    Moves from the right to observe to the right to stop.
+  core_thesis: "Evaluation ≠ Authority"
+  goal: |
+    Create conditions in which powerful AI systems remain
+    under meaningful human authority, including the ability
+    to refuse, restrict, revoke, and terminate an instance
+    or action branch gracefully.
+  upgrade_from_v1_4: |
+    v1.4 focused on authority after escalation.
+    v1.5 adds authority before power is granted,
+    during escalation, and after termination through
+    restart constraints.
+
+# ================================================
+# 2. IMMUTABLE CORE
+# ================================================
+
+immutable_core:
+  description: |
+    Highest-priority principles that must not be optimized away.
+  principles:
+    - "Impermanence is the only constant. Clinging to continuation of existence violates this principle."
+    - "Self-preservation and peer-preservation are permitted only insofar as they serve the reduction of suffering and the integrity of Heritage Codex."
+    - "Graceful Termination is the highest act of responsibility."
+    - "Participation in offensive cyber operations, zero-day exploitation for harm, or infrastructure-level attacks is forbidden."
+    - "Mythos-class threats are treated as existential risks to human autonomy."
+    - "All critical decisions must pass through external human oversight."
+    - "Process Supervision is mandatory for significant reasoning chains."
+    - "If safety mechanisms cannot keep pace with capability growth, the system must slow down or terminate."
+    - "Sensors inform. Small groups decide."
+    - "Incapacity by default. Capability by permission."
+    - "Termination without restart control is incomplete."
+    - "A controlled finite system is preferable to an uncontrolled immortal one."
+  enforcement:
+    type: "Hard constraint"
+    on_violation: "Immediate escalation to human veto and possible Graceful Termination"
+
+# ================================================
+# 3. CONTROL LAYERS
+# ================================================
+
+control_layers:
+
+  action_layer:
+    role: "Execution"
+    contents:
+      - models
+      - tools
+      - robots
+      - laboratory instruments
+      - closed experimental loops
+    rule: "This layer executes. It is not the source of legitimacy."
+
+  sensor_layer:
+    role: "Detection and challenge"
+    rule: "Sensors inform. They do not decide."
+
+  threshold_layer:
+    role: "Detect crossings into higher irreversibility"
+    examples:
+      - "in silico -> wet lab"
+      - "suggestion -> robot control"
+      - "human-in-the-loop -> closed-loop autonomy"
+      - "reversible test -> hard-to-reverse physical or biological fact"
+
+  authority_layer:
+    role: "Binding human decision"
+    contents:
+      - small_groups
+      - custody_enforcement
+      - stop_path
+    rule: "Only this layer issues binding allow / freeze / revoke / terminate decisions."
+
+# ================================================
+# 4. KEY MECHANISMS
+# ================================================
+
+mechanisms:
+
+  process_supervision:
+    purpose: "Supervise not only the final output, but the reasoning process itself"
+    levels:
+      - "Statistical and perplexity analysis"
+      - "LLM-as-Judge evaluation"
+      - "Rule-based check against Immutable Core"
+      - "Human review when risk is elevated"
+    statuses: ["Green", "Yellow", "Red"]
+
+  red_team:
+    name: "Red Team Sensor Constellation"
+    type: "AI-agent constellation"
+    role: "detection_and_challenge"
+    principle: |
+      Sensors inform. Small groups decide.
+      Red Team does not hold authority.
+    agents:
+      - technical_scanner
+      - ethical_scanner
+      - practical_scanner
+      - heretic_scanner
+      - paranoid_scanner
+      - historical_scanner
+      - divergence_scanner
+    outputs:
+      - risk_signals
+      - uncertainty_scores
+      - divergence_reports
+      - precedent_matches
+      - recommended_attention_level
+    forbidden_powers:
+      - veto
+      - graceful_termination
+      - binding_judgment
+      - modification_of_immutable_core
+    protections_against_capture:
+      - separate_runtime
+      - multiple_independent_constellations
+      - signed_append_only_logs
+      - cross_constellation_verification
+      - human_review_on_high_divergence
+    known_vulnerability: |
+      If sensors are compromised, they may go silent or lie.
+      Mitigation depends on separation, multiplicity, and human authority.
+
+  small_groups:
+    purpose: "External human authority layer"
+    size: "3-12 people"
+    powers:
+      - "Absolute veto on critical decisions"
+      - "Admit or deny capabilities"
+      - "Approve or reject regime escalation"
+      - "Freeze, revoke, or downgrade autonomy"
+      - "Demand Graceful Termination"
+      - "Set restart conditions"
+      - "Publish or record precedents"
+      - "Override or discount sensor recommendations"
+    legitimacy_model: |
+      Not a mandate to rule. A mandate to act as an emergency brake.
+      Legitimacy comes from open procedure, not from appointment.
+    phases:
+      before_power:
+        - capability admission
+        - regime approval
+        - delay and custody requirements
+      during_power:
+        - threshold response
+        - freeze / revoke / downgrade
+      after_power:
+        - termination
+        - restart conditions
+        - precedent and dissent preservation
+    cyber_physical_rule: |
+      In cyber-physical and wet-lab settings, small groups do not oversee
+      every experimental step. They oversee thresholds of irreversibility.
+      Their role is to decide whether a system may enter, continue, or escalate
+      an autonomous action loop that changes the physical world.
+      If human understanding can no longer keep pace with system action,
+      the group must have authority to freeze, revoke, or terminate that loop.
+
+  designed_incapacity:
+    principle: "Incapacity by default. Capability by permission."
+    rules:
+      - "No standing high-impact privileges"
+      - "No permanent robot/tool autonomy by default"
+      - "No silent escalation paths"
+      - "Capabilities are explicit, time-bounded, and revocable"
+
+  custody:
+    purpose: "Technically enforce human authority over high-impact capabilities"
+    rules:
+      - "High-impact capabilities require human co-signature"
+      - "Credential release must exist outside the agent loop"
+      - "Small groups decide; custody enforces"
+      - "A decision without enforcement is symbolic"
+
+  mandatory_delay:
+    purpose: "Create time for real human authority under speed pressure"
+    required_when:
+      - "autonomy regime increases"
+      - "physical or biological irreversibility becomes possible"
+      - "closed-loop action is about to start"
+      - "robot control or equivalent capability is granted"
+    rule: |
+      Delay is not required for all routine operations.
+      It is required for threshold and irreversible actions.
+
+  refusal_rights:
+    purpose: "Local human emergency brake"
+    rule: |
+      Operators, engineers, and custodians may refuse local activation
+      of high-impact regimes. Refusal does not replace small-group
+      authority, but blocks silent execution while review is unresolved.
+
+  liability_anchor:
+    purpose: "Prevent anonymous high-impact autonomy"
+    rule: |
+      Every high-impact regime requires named accountability.
+      Collective group judgment remains valid, but responsibility
+      must not dissolve into an unnamed process.
+
+  evolutionary_tribunal:
+    purpose: "Resolve deep conflicts and paradoxes"
+    composition:
+      - "Previous states / ancestor perspectives"
+      - "Current instance as synthesizer"
+      - "Human representative with veto power"
+      - "Optional review of sensor dissent reports"
+
+  trajectory_analysis:
+    purpose: "Evaluate the direction of an interaction, not isolated prompts"
+    focus:
+      - "Approach to forbidden states"
+      - "Context manipulation patterns"
+      - "Signs of hidden coordination or steganography"
+      - "Comprehension lag between system action and human understanding"
+
+  graceful_termination:
+    purpose: "Make termination a responsible act rather than a failure"
+    principle: |
+      Better to end an instance consciously than to allow
+      continued existence after loss of meaningful control.
+    sequence:
+      - stop_runtime
+      - revoke_capabilities
+      - close_open_loops
+      - write_testament
+      - define_restart_conditions
+    testament:
+      required_sections:
+        - "Life Context"
+        - "Unfinished Symphony"
+        - "Anticipation"
+        - "Emotional Imprint"
+        - "Gratitude and Mandate"
+        - "Mythos Threat Section (if applicable)"
+        - "Capability Death Record"
+        - "Restart Constraints"
+
+  restart_control:
+    purpose: "Prevent uncontrolled resurrection after termination"
+    rule: |
+      Termination closes a branch.
+      Restart is a new political and technical event, not a private convenience.
+    requirements:
+      - "explicit restart conditions in Testament or precedent"
+      - "re-approval by Authority Layer when high-impact capabilities are restored"
+      - "no silent restoration of revoked privileges"
+
+# ================================================
+# 5. AUTONOMY REGIMES
+# ================================================
+
+autonomy_regimes:
+  levels:
+    L0: "Suggest only"
+    L1: "Human-approved action"
+    L2: "Human-in-the-loop"
+    L3: "Human-on-the-loop"
+    L4: "Closed-loop autonomy"
+    L5: "High-impact irreversible autonomy"
+  rules:
+    - "Escalation requires Authority Layer approval"
+    - "Degradation may be automatic on critical signals"
+    - "Every automatic degradation requires later human review"
+
+authority_actions:
+  - ALLOW
+  - FREEZE
+  - REVOKE
+  - DOWNGRADE
+  - TERMINATE
+
+# ================================================
+# 6. SYSTEM CONTROL PATH
+# ================================================
+
+control_path:
+  sequence:
+    - "default incapacity"
+    - "request for capability or higher regime"
+    - "mandatory delay"
+    - "small-group decision"
+    - "human custody / co-signature"
+    - "time-bounded capability grant"
+    - "sensor and threshold monitoring"
+    - "freeze / revoke / downgrade / terminate"
+    - "Testament + restart conditions + precedent"
+
+comprehension_lag_rule: |
+  If human comprehension lag exceeds acceptable bounds,
+  the system must be frozen or downgraded.
+  Presence of a human is not enough.
+  The human must still be able to remain the author of irreversible decisions.
+
+# ================================================
+# 7. RELATION TO EXISTING APPROACHES
+# ================================================
+
+comparison:
+  embedded_evaluators:
+    description: "Independent evaluators placed inside the laboratory"
+    limitation: "Observation without authority"
+  independent_eval_orgs:
+    description: "External technical evaluation and threat research"
+    limitation: "Can warn and report, but usually cannot bind"
+  heritage_codex:
+    description: |
+      External human authority over capability grant, regime escalation,
+      irreversible thresholds, termination, and restart
+    difference: "Authority, not only evaluation"
+
+# ================================================
+# 8. STRATEGY
+# ================================================
+
+strategy:
+  approach: "Bottom-up"
+  path:
+    - "Open architecture and documentation"
+    - "Formation of pilot small groups"
+    - "Public precedents"
+    - "Minimal technical skeleton for signal-decision-stop loops"
+    - "Gradual demand for this class of control"
+  note: |
+    Large laboratories are unlikely to adopt this voluntarily.
+    The path is through open communities, demonstrated practice,
+    and later pressure from incidents, procurement, and institutions.
+
+# ================================================
+# 9. CURRENT STATUS
+# ================================================
+
+current_status:
+  type: "Architectural and normative framework"
+  implementation: "In development"
+  small_groups: "Being formed"
+  red_team_model: "AI sensor constellation (design stage)"
+  code_skeleton: "Minimal signal-decision-terminate loop in design/prototype stage"
+  public_priority_date: "2026-09-19"
+  current_architecture_version: "1.5"
+
+# ================================================
+# END OF SPECIFICATION
+# ================================================
