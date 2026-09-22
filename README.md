@@ -42,15 +42,18 @@ We are building a system that knows when it must end.
 - Small Groups with veto power
 - Evolutionary Tribunal
 - Graceful Termination + Testament
+- System control over thresholds of irreversibility
+- Control extensions: incapacity by default, custody, delay, restart control
 
 ## Current status
 
 This is an architectural and normative framework.  
-A working prototype is under development.  
+A minimal technical skeleton is under development.  
 The first small groups are being formed.
 
-**Version:** 1.4  
-**Publication date:** 2026-09-19
+**Version:** 1.5  
+**Publication date:** 2026-09-19  
+**Architecture update:** 2026-09-21
 
 ### Honest limitations
 
@@ -59,11 +62,31 @@ It cannot force access to logs, compel consultation, or make a veto binding.
 
 What it can do is clearly name the gap in existing approaches (observation without authority) and propose a more rigorous architecture of human control — before the need for it becomes obvious.
 
+## Code status
+
+A minimal prototype path is in development:
+
+`signal → group decision → terminate → precedent`
+
+This is a demo-level authority workflow, not a claim of control over frontier laboratories.
+
+## Running the prototype
+
+```bash
+pip install -r requirements.txt
+uvicorn src.api.main:app --reload
+
 ## Documents
 
 - [Manifesto](./manifesto.md)
-- [Architecture (YAML)](./architecture_v1.4.yaml)
+- [Architecture (YAML)](./architecture_v1.5.yaml)
 - [Documentation](./docs/)
+- [Finitude and Conscience](./docs/09_finitude_and_conscience.md)
+- [System Control Architecture](./docs/10_system_control_architecture.md)
+- [Control Extensions v1.5](./docs/11_control_extensions_v1_5.md)
+- [Comparative Position](./docs/12_comparative_position.md)
+- [License Rationale](./docs/license_rationale.md)
+- [Procedure Before Code](./docs/13_procedure_before_code.md)
 
 ## How to join
 
@@ -72,13 +95,12 @@ We are looking for people willing to help form the first small groups.
 
 ## License
 
-See [LICENSE](./LICENSE)
+See [LICENSE](./LICENSE).
 
-The license is intentionally written without a blanket ban on high-risk use.
-It prohibits the most dangerous classes of application and requires that any
-high-risk use preserve external human veto and a real termination path.
+The license is intentionally written without a blanket ban on high-risk use.  
+It prohibits the most dangerous classes of application and requires that any high-risk use preserve external human veto and a real termination path.
 
-See [License Rationale](./docs/license_rationale.md).
+Details: [License Rationale](./docs/license_rationale.md)
 
 ## Author
 
