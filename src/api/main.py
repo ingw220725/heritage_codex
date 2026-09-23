@@ -6,7 +6,7 @@ from typing import Dict, List
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
-from src.core.models import (
+from core.models import (
     AuditEvent,
     Decision,
     Precedent,
@@ -18,8 +18,8 @@ from src.core.models import (
     Verdict,
     new_id,
 )
-from src.core.decision_engine import make_decision
-from src.core.terminate import terminate_handler
+from core.decision_engine import make_decision
+from core.terminate import terminate_handler
 
 app = FastAPI(
     title="Heritage Codex Skeleton",
